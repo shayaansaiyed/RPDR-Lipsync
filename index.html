@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Project starter</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+  </head>
+  <body>
+      <div id="startMenu">
+          <h1>Welcome to</h1> 
+          <h1 class="title">Rupaul's Best Friend Race!</h1>
+          <p class="instructions">
+            Try and guess which queen won the lip sync.<br>
+            If there are multiple winners, pick any one.<br>
+            If there were no winner, pick 'None'.<br>
+          </p>
+          <button id="startButton" onclick="start()">Start</button>
+      </div>
+      <div id="game">
+        <div id="choices"></div>
+        <div class="episodeInfo">
+          Season 4 Episode 10 <br>
+          Drag on a dime
+        </div>
+        <script src="src/js/index.js"></script>
+      </div>
+      <div id="endScreen">
+          <h1 id="scoreDisplay"></h1>
+          <button id="restartButton" onclick="start()">Restart</button>
+      </div>
+  </body>
+</html>
