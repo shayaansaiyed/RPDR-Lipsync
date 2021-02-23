@@ -1,4 +1,5 @@
 {
+  "homepage": "http://shayaansaiyed.github.io/RPDR-Lipsync",
   "name": "rpdr_lipsync_game",
   "version": "1.0.0",
   "description": "A game to pick the winner of a lip sync from all seasons of RPDR",
@@ -17,6 +18,5 @@
     "node-sass": "^5.0.0",
     "onchange": "^7.1.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
