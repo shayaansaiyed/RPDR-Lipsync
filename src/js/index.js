@@ -19,16 +19,18 @@ window.onload = () => {
     // should start off none
     document.querySelector("#game").style.display = "none";
     document.querySelector("#endScreen").style.display = "none";
+    getImageLinks();
 }
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
-async function getData(){
+async function getLipsyncData(){
     for(var i = 0; i < numberOfRounds; ){
         let id = getRandomInt(171);
-        url = 'http://www.nokeynoshade.party/api/lipsyncs/' + id;
+        console.log(`Lip Sync ID: ${id}`)
+        url = 'https://www.nokeynoshade.party/api/lipsyncs/' + id;
         await fetch(url)
             .then(response => {
                 if(!response.ok){
@@ -46,9 +48,9 @@ async function getData(){
     }
 }
 
-async function getQueenData(){
+async function getImageLinks(){
     // console.log(gameData);
-    let url = `http://www.nokeynoshade.party/api/queens/all`
+    let url = `https://www.nokeynoshade.party/api/queens/all`
     await fetch(url)
         .then(response => {
             return response.json();
@@ -56,14 +58,10 @@ async function getQueenData(){
         .then(queens => {
             // console.log(queens);
             //queenImgLinks[queenID] = queen.image_url;
-            getImageLinks(queens);
+            for (q of queens){
+                queenImgLinks[q.id] = q.image_url;
+            }
         })
-}
-
-function getImageLinks(queenData){
-    for (q of queenData){
-        queenImgLinks[q.id] = q.image_url;
-    }
 }
 
 async function start(){
@@ -72,8 +70,7 @@ async function start(){
     score = 0;
     currentRound = 0
     gameData = [];
-    await getData();
-    await getQueenData();
+    await getLipsyncData();
     preloadImages();
     document.getElementById("startButton").disabled = false;
     document.getElementById("restartButton").disabled = false;
@@ -81,6 +78,23 @@ async function start(){
     document.querySelector("#startMenu").style.display = "none";
     document.querySelector("#game").style.display = "block";
     document.querySelector("#endScreen").style.display = "none";
+}
+
+async function getEpisodeInformation(epID){
+    var episode_url = `https://www.nokeynoshade.party/api/episodes/${epID}`;
+    await fetch(episode_url)
+        .then(response => {
+            if(!response.ok){
+                throw new error("Network response not okay");
+            }
+            return response.json();
+        })
+        .then(episode => {
+            return episode;
+        })
+        .catch(error => {
+            console.error("Getting Episode Error:" + error);
+        })
 }
 
 function handleChoice(choice){
