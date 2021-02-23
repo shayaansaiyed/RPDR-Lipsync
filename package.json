@@ -17,5 +17,6 @@
     "node-sass": "^5.0.0",
     "onchange": "^7.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+  }
 }
