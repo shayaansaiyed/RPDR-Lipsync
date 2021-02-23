@@ -1,8 +1,15 @@
 * {
-    background-color: #ffcccc;
     text-align: center;
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Open Sans', sans-serif;
     color: #2E2F2F;
+}
+
+#startMenu{
+    padding-top: 50px;
+}
+
+.instructions{
+    font-size: 1.5em;
 }
 
 img {
@@ -28,4 +35,5 @@ img {
 .title {
     font-size: 5em;
     color: #D90368;
+    font-family: 'Abril Fatface', cursive;
 }
