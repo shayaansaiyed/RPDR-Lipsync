@@ -1,8 +1,11 @@
 To Do:
 - Fix sizing for pictures from Season 7 and Season 8
-- UI design - color scheme, fonts
+- UI design - fonts and buttons
 - add loading animation
 - add animations for correct or incorrect choices
 - fix prelaoding
 - choose background and font colors based on queens
 - deal with missing images
+- fix title
+- add messages based on score
+- show a score counter

@@ -20,6 +20,7 @@ window.onload = () => {
     // should start off none
     document.querySelector("#game").style.display = "none";
     document.querySelector("#endScreen").style.display = "none";
+    document.querySelector(".loader").style.display = "none";
     getImageLinks();
 }
 
@@ -66,6 +67,7 @@ async function getImageLinks(){
 
 
 async function start(){
+    document.querySelector(".loader").style.display = "block";
     document.getElementById("startButton").disabled = true;
     document.getElementById("restartButton").disabled = true;
     score = 0;
@@ -73,7 +75,7 @@ async function start(){
     gameData = [];
     await getLipsyncData();
     await getEpisodeInformation(); 
-    preloadImages();
+    await preloadImages();
     document.getElementById("startButton").disabled = false;
     document.getElementById("restartButton").disabled = false;
     displayRound();

@@ -31,9 +31,9 @@ img {
     width: auto;
     margin: 10px;
     padding: 0px;
-    border-radius: 25px;
     border: 25px solid transparent;
     border-image: url(./images/frame3.png) 7% stretch;
+    box-shadow: 7px 7px 5px black;
     // border-image-slice: 50%; 
 }
 
@@ -63,8 +63,8 @@ button{
     font-size: 30px;
     background-color:#EAE2B7;
     color: #003049;
-    border: solid 5px #F77F00;
-    border-radius: 10px;
+    border: 10px solid transparent;
+    border-image: url(./images/frame3.png) 7% stretch;
     margin: 10px;
     padding: 10px;
 }
@@ -72,3 +72,24 @@ button{
 button:hover{
     margin-top: 15px;
 }
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
