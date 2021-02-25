@@ -4,7 +4,6 @@ var numberOfRounds = 10
 var gameData = [] 
 var queenImgLinks = {}
 var seasonMap = ["None", "Season 1", "Season 2", "Season 3", "Season 4", "All Stars 1", "Season 5", "Season 6", "Season 7", "Season 8", "All Stars 2", "Season 9", "All Stars 3", "Season 10", "All Stars 4", "Season 11", "Season 12", "All Stars 5"]
-const mySet2 = new Set([1, 2, 3, 4])
 
 // Preload images
 function preloadImages() {
@@ -32,7 +31,7 @@ function getRandomInt(max) {
 async function getLipsyncData(){
     for(var i = 0; i < numberOfRounds; ){
         let id = getRandomInt(171);
-        url = 'https://www.nokeynoshade.party/api/lipsyncs/' + 38;
+        url = 'https://www.nokeynoshade.party/api/lipsyncs/' + id;
         await fetch(url)
             .then(response => {
                 if(!response.ok){
@@ -45,7 +44,7 @@ async function getLipsyncData(){
                 i++;
             })
             .catch(error => {
-                console.error("There was an errer:" + error);
+                console.error("There was an error:" + error);
             })
     }
 }
@@ -80,39 +79,34 @@ async function getImageLinks(){
 
 
 async function start(){
-    document.querySelector(".loader").style.display = "block";
+    var loaders = document.querySelectorAll(".loader")
+    loaders.forEach(function(loadIcon) {
+        loadIcon.style.display = "block";
+        console.log(loadIcon);
+    });
     document.getElementById("startButton").disabled = true;
+    document.getElementById("startButton").style.display = "none";
     document.getElementById("restartButton").disabled = true;
+    document.getElementById("restartButton").style.display = "none";
     score = 0;
     currentRound = 0
     gameData = [];
     await getLipsyncData();
     await getEpisodeInformation(); 
     await preloadImages();
+    loaders.forEach(function(loadIcon) {
+        loadIcon.style.display = "none";
+        console.log(loadIcon);
+    });
     document.getElementById("startButton").disabled = false;
     document.getElementById("restartButton").disabled = false;
+    document.getElementById("restartButton").style.display = "inline-block";
+    document.getElementById("startButton").style.display = "inline-block";
     displayRound();
     document.querySelector("#startMenu").style.display = "none";
     document.querySelector("#game").style.display = "block";
     document.querySelector("#endScreen").style.display = "none";
 }
-
-// async function getEpisodeInformation(epID){
-//     var episode_url = `https://www.nokeynoshade.party/api/episodes/${epID}`;
-//     await fetch(episode_url)
-//         .then(response => {
-//             if(!response.ok){
-//                 throw new error("Network response not okay");
-//             }
-//             return response.json();
-//         })
-//         .then(episode => {
-//             return episode;
-//         })
-//         .catch(error => {
-//             console.error("Getting Episode Error:" + error);
-//         })
-// }
 
 async function getEpisodeInformation(){
     for(let i = 0; i < gameData.length; i++){
@@ -135,30 +129,6 @@ async function getEpisodeInformation(){
             })
     }
 }
-
-// async function getSeasonInformation(){
-//     await fetch("http://www.nokeynoshade.party/api/seasons")
-//         .then(response => {
-//             if(!response.ok){
-//                 throw new error("Network response not okay");
-//             }
-//             return response.json();
-//         })
-//         .then(seasons => {
-//             var seasonMap = {};
-//             for (var i = 0; i < seasons.length; i++){
-//                 seasonMap[seasons[i].id] = seasons[i].seasonNumber;
-//             }
-            
-//             for (var i = 0; i < gameData.length; i++){
-//                 gameData[i]["seasonNumber"] = seasonMap[gameData[i].seasonId];
-//             }
-//             console.log(seasonMap);
-//         })
-//         .catch(error => {
-//             console.error("Error getting season data: " + error);
-//         })
-// }
 
 function handleChoice(choice){
     queens = gameData[currentRound].queens;

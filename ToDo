@@ -5,7 +5,6 @@ To Do:
     - episode and season label
     - start page title
     - start page instructions
-- add loading animation
 - add animations for correct or incorrect choices
 - fix prelaoding
 - choose background and font colors based on queens
@@ -22,3 +21,4 @@ Completed:
     -phiphiohara
     -katya
     -yuhua hamasaki
+- add loading animation

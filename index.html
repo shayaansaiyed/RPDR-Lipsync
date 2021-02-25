@@ -18,7 +18,10 @@
             If there are multiple winners, pick any one.<br>
             If there were no winner, pick 'None'.<br>
           </p>
-          <span class="loader"></span>
+          <div class="loader-wrapper">
+            <span class="loader"></span>
+          </div>
+          
           <button id="startButton" onclick="start()">Start</button>
       </div>
       <div id="game">
@@ -33,6 +36,9 @@
       <div id="endScreen">
           <h1 id="scoreDisplay"></h1>
           <button id="restartButton" onclick="start()">Restart</button>
+          <div class="loader-wrapper">
+            <span class="loader"></span>
+          </div>
       </div>
   </body>
 </html>
