@@ -1,0 +1,74 @@
+$font-stack-title: 'Abril Fatface', cursive;
+$font-color-title: #FCBF49; 
+$font-color-background: #003049;
+$font-color-default: #EAE2B7;
+
+* {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color: $font-color-default;
+    // border-image: url(http://placekitten.com/100/100) 25% round;
+    // background-color: $font-color-background;
+}
+
+body {
+    background-image: url(./images/bkg-img2.jpg);
+    background-size: 1000px;
+    // background-color: $font-color-background;
+}
+
+#startMenu{
+    padding-top: 50px;
+}
+
+.instructions{
+    font-size: 1.5em;
+}
+
+img {
+    height: 400px;
+    width: auto;
+    margin: 10px;
+    padding: 0px;
+    border-radius: 25px;
+    border: 25px solid transparent;
+    border-image: url(./images/frame3.png) 7% stretch;
+    // border-image-slice: 50%; 
+}
+
+img:hover{
+    margin-top: 20px;
+    // border: solid 10px #D62828;
+    // background-color: #F77F00;
+}
+
+#choices {
+    display: flex;
+    justify-content: center;
+}
+
+.queen {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 5em;
+    color: $font-color-title;
+    font-family: $font-stack-title;
+}
+
+button{
+    font-size: 30px;
+    background-color:#EAE2B7;
+    color: #003049;
+    border: solid 5px #F77F00;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+
+button:hover{
+    margin-top: 15px;
+}
