@@ -4,6 +4,7 @@ var numberOfRounds = 10
 var gameData = [] 
 var queenImgLinks = {}
 var seasonMap = ["None", "Season 1", "Season 2", "Season 3", "Season 4", "All Stars 1", "Season 5", "Season 6", "Season 7", "Season 8", "All Stars 2", "Season 9", "All Stars 3", "Season 10", "All Stars 4", "Season 11", "Season 12", "All Stars 5"]
+const mySet2 = new Set([1, 2, 3, 4])
 
 // Preload images
 function preloadImages() {
@@ -31,7 +32,7 @@ function getRandomInt(max) {
 async function getLipsyncData(){
     for(var i = 0; i < numberOfRounds; ){
         let id = getRandomInt(171);
-        url = 'https://www.nokeynoshade.party/api/lipsyncs/' + id;
+        url = 'https://www.nokeynoshade.party/api/lipsyncs/' + 38;
         await fetch(url)
             .then(response => {
                 if(!response.ok){
@@ -60,7 +61,19 @@ async function getImageLinks(){
             // console.log(queens);
             //queenImgLinks[queenID] = queen.image_url;
             for (q of queens){
-                queenImgLinks[q.id] = q.image_url;
+                if (q.id == 90){ //Katya Image
+                    queenImgLinks[q.id] = "http://www.nokeynoshade.party/images/Katya.jpg";
+                } else if (q.id == 110) { // Eureka Ohara image
+                    queenImgLinks[q.id] = "http://www.nokeynoshade.party/images/euroka-ohara.jpg";
+                } else if (q.id == 128) { // Yuhua Hamasaki
+                    queenImgLinks[q.id] = "http://www.nokeynoshade.party/images/yuhau-hamasaki.jpg";
+                } else if (q.id == 47) {
+                    queenImgLinks[q.id] = "http://www.nokeynoshade.party/images/phi-phi-o%27hara.png";
+                    console.log("PHIPHI");
+                } else {
+                    console.log(q.image_url);
+                    queenImgLinks[q.id] = q.image_url;
+                }
             }
         })
 }
@@ -163,14 +176,24 @@ function handleChoice(choice){
 }
 
 function displayRound(){
+    console.log(gameData);
     queenArr = gameData[currentRound].queens;
     var i = 0;
     buttonHTML = queenArr.map(function(queen){
+        if(queen.id >= 81 && queen.id <= 106){
+            // special img format for queens from season 7 and 8
+            return `<div class="queen">
+            <img src="${queenImgLinks[queen.id]}" onclick="handleChoice(${i++})" style="height:400px; width:300px;">
+            <div id="choice${i}" >${queen.name}</div>
+            </div>
+            `;
+        } else {
         return `<div class="queen">
         <img src='${queenImgLinks[queen.id]}' onclick="handleChoice(${i++})">
         <div id="choice${i}" >${queen.name}</div>
         </div>
         `;
+        }
     }).join('');
     document.querySelector("#choices").innerHTML = buttonHTML;
     document.querySelector(".episodeTitle").innerHTML = gameData[currentRound].episodeName;

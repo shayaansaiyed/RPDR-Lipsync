@@ -1,6 +1,10 @@
 To Do:
-- Fix sizing for pictures from Season 7 and Season 8
-- UI design - fonts and buttons
+
+- UI design
+    - queen label
+    - episode and season label
+    - start page title
+    - start page instructions
 - add loading animation
 - add animations for correct or incorrect choices
 - fix prelaoding
@@ -9,3 +13,12 @@ To Do:
 - fix title
 - add messages based on score
 - show a score counter
+- prevent duplicate rounds
+
+Completed:
+- Fix sizing for pictures from Season 7 and Season 8
+- - queens with missing images
+    -eureka
+    -phiphiohara
+    -katya
+    -yuhua hamasaki
