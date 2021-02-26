@@ -130,13 +130,23 @@ async function getEpisodeInformation(){
     }
 }
 
-function handleChoice(choice){
+async function handleChoice(choice){
     queens = gameData[currentRound].queens;
+    choiceImg = document.querySelector(`#choice${choice}`);
+    
 
     if(queens[choice].won){
         score++;
         // alert("Correct choice");
+        // animation for correct/incorrect choice
+        console.log(document.querySelector("#neon-light"));
+        document.querySelector("#neon-light").className = "green-neon-light";
+    } else {
+        choiceImg.classList.add("shake");
+        document.querySelector("#neon-light").className = "red-neon-light";
     }
+
+    await new Promise(r => setTimeout(r, 1000));
     if(currentRound == gameData.length - 1){
         displayEnd();
     } else {
@@ -153,18 +163,19 @@ function displayRound(){
         if(queen.id >= 81 && queen.id <= 106){
             // special img format for queens from season 7 and 8
             return `<div class="queen">
-            <img src="${queenImgLinks[queen.id]}" onclick="handleChoice(${i++})" style="height:400px; width:300px;">
-            <div id="choice${i}" >${queen.name}</div>
+            <img src="${queenImgLinks[queen.id]}" id="choice${i}" onclick="handleChoice(${i++})" style="height:400px; width:300px;">
+            <div>${queen.name}</div>
             </div>
             `;
         } else {
         return `<div class="queen">
-        <img src='${queenImgLinks[queen.id]}' onclick="handleChoice(${i++})">
-        <div id="choice${i}" >${queen.name}</div>
+        <img src='${queenImgLinks[queen.id]}' id="choice${i}" onclick="handleChoice(${i++})">
+        <div>${queen.name}</div>
         </div>
         `;
         }
     }).join('');
+    document.querySelector("#neon-light").className = "off-neon-light";
     document.querySelector("#choices").innerHTML = buttonHTML;
     document.querySelector(".episodeTitle").innerHTML = gameData[currentRound].episodeName;
     document.querySelector("#seasonNumber").innerHTML = gameData[currentRound].seasonNumber;

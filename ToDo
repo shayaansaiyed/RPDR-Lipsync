@@ -1,11 +1,9 @@
 To Do:
-
 - UI design
     - queen label
     - episode and season label
     - start page title
     - start page instructions
-- add animations for correct or incorrect choices
 - fix prelaoding
 - choose background and font colors based on queens
 - deal with missing images
@@ -13,6 +11,7 @@ To Do:
 - add messages based on score
 - show a score counter
 - prevent duplicate rounds
+- add sound effects
 
 Completed:
 - Fix sizing for pictures from Season 7 and Season 8
@@ -22,3 +21,8 @@ Completed:
     -katya
     -yuhua hamasaki
 - add loading animation
+- animations/effects for correct incorrect choices
+
+Sources:
+lights: https://codepen.io/fskirschbaum/pen/MYJNaj
+

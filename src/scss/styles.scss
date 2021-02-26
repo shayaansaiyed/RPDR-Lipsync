@@ -32,7 +32,7 @@ img {
     margin: 10px;
     padding: 0px;
     border: 25px solid transparent;
-    border-image: url(./images/frame3.png) 7% stretch;
+    border-image: url(./images/frame3.png) 8% 6% stretch;
     box-shadow: 7px 7px 5px black;
     // border-image-slice: 50%; 
 }
@@ -42,6 +42,28 @@ img:hover{
     // border: solid 10px #D62828;
     // background-color: #F77F00;
 }
+
+.shake {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.1s;
+  
+    /* When the animation is finished, start again */
+    animation-iteration-count: 7;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 0px) rotate(0deg); }
+    10% { transform: translate(-1px, 0px) rotate(0deg); }
+    20% { transform: translate(-3px, 0px) rotate(0deg); }
+    30% { transform: translate(3px, 0px) rotate(0deg); }
+    40% { transform: translate(1px, 0px) rotate(0deg); }
+    50% { transform: translate(-1px, 0px) rotate(0deg); }
+    60% { transform: translate(-3px, 0px) rotate(0deg); }
+    70% { transform: translate(3px, 0px) rotate(0deg); }
+    80% { transform: translate(-1px, 0px) rotate(0deg); }
+    90% { transform: translate(1px, 0px) rotate(0deg); }
+    100% { transform: translate(1px, 0px) rotate(0deg); }
+  }
 
 #choices {
     display: flex;
@@ -103,3 +125,36 @@ button:active{
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+.off-neon-light{
+    width: 300px;
+    height: 20px;
+    margin: 20px auto 0px auto;
+    border-radius: 10px;
+    background: #39ff14; 
+    background-image: radial-gradient(white, grey);
+}
+
+.green-neon-light{
+    // background-color: yellow;
+    width: 300px;
+    height: 20px;
+    margin: 20px auto 0px auto;
+    border-radius: 10px;
+    color: #111; 
+    background: #39ff14; 
+    background-image: radial-gradient(white, #00FF00);
+    box-shadow: 0px 0px 25px 14px #00FF00;
+}
+
+.red-neon-light{
+    // background-color: yellow;
+    width: 300px;
+    height: 20px;
+    margin: 20px auto 0px auto;
+    border-radius: 10px;
+    color: #111; 
+    background: red; 
+    background-image: radial-gradient(white, red);
+    box-shadow: 0px 0px 25px 14px red;
+}
