@@ -186,7 +186,7 @@ function displayEnd(){
     document.querySelector("#startMenu").style.display = "none";
     document.querySelector("#game").style.display = "none";
     document.querySelector("#endScreen").style.display = "block";
-    document.querySelector("#scoreDisplay").innerHTML = "Your got " + score + " out of 10!";
+    document.querySelector("#scoreDisplay").innerHTML = "You got " + score + " out of 10!";
 }
 
 
