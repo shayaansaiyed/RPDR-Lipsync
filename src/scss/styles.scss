@@ -81,6 +81,32 @@ img:hover{
     font-family: $font-stack-title;
 }
 
+.queen-name {
+    color: #FCBF49;
+    font-size: 1.5em;
+    font-family: $font-stack-title;
+}
+
+.episodeData{
+    margin: 20px auto;
+    padding: 5px;
+    width: 45%;
+    color: #FCBF49;
+    font-size: 30px;
+    font-family: $font-stack-title;
+
+}
+
+.episodeData > *{
+    font-size: 30px;
+    font-family: $font-stack-title;
+}
+
+.episodeData > * > *{
+    font-size: 30px;
+    font-family: $font-stack-title;
+}
+
 button{
     font-size: 30px;
     background-color:#EAE2B7;
@@ -89,6 +115,13 @@ button{
     border-image: url(./images/frame3.png) 7% stretch;
     margin: 10px;
     padding: 10px;
+    font-family: $font-stack-title;
+}
+
+#scoreDisplay {
+    font-family: $font-stack-title;
+    font-size: 1.5em;
+    margin-top: 100px;
 }
 
 button:hover{
@@ -127,6 +160,7 @@ button:active{
   }
 
 .off-neon-light{
+    z-index: 100;
     width: 300px;
     height: 20px;
     margin: 20px auto 0px auto;
@@ -137,6 +171,7 @@ button:active{
 
 .green-neon-light{
     // background-color: yellow;
+    z-index: 100;
     width: 300px;
     height: 20px;
     margin: 20px auto 0px auto;
@@ -149,6 +184,7 @@ button:active{
 
 .red-neon-light{
     // background-color: yellow;
+    z-index: 100;
     width: 300px;
     height: 20px;
     margin: 20px auto 0px auto;

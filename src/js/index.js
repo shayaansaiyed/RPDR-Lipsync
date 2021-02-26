@@ -164,13 +164,13 @@ function displayRound(){
             // special img format for queens from season 7 and 8
             return `<div class="queen">
             <img src="${queenImgLinks[queen.id]}" id="choice${i}" onclick="handleChoice(${i++})" style="height:400px; width:300px;">
-            <div>${queen.name}</div>
+            <div class="queen-name">${queen.name}</div>
             </div>
             `;
         } else {
         return `<div class="queen">
         <img src='${queenImgLinks[queen.id]}' id="choice${i}" onclick="handleChoice(${i++})">
-        <div>${queen.name}</div>
+        <div class="queen-name">${queen.name}</div>
         </div>
         `;
         }
@@ -186,7 +186,7 @@ function displayEnd(){
     document.querySelector("#startMenu").style.display = "none";
     document.querySelector("#game").style.display = "none";
     document.querySelector("#endScreen").style.display = "block";
-    document.querySelector("#scoreDisplay").innerHTML = "Your score is " + score;
+    document.querySelector("#scoreDisplay").innerHTML = "Your got " + score + " out of 10!";
 }
 
 

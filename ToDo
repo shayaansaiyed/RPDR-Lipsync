@@ -1,12 +1,5 @@
 To Do:
-- UI design
-    - queen label
-    - episode and season label
-    - start page title
-    - start page instructions
 - fix prelaoding
-- choose background and font colors based on queens
-- deal with missing images
 - fix title
 - add messages based on score
 - show a score counter
@@ -22,6 +15,12 @@ Completed:
     -yuhua hamasaki
 - add loading animation
 - animations/effects for correct incorrect choices
+- deal with missing images
+- UI design
+    - queen label
+    - episode and season label
+    - start page title
+    - start page instructions
 
 Sources:
 lights: https://codepen.io/fskirschbaum/pen/MYJNaj
