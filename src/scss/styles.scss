@@ -1,7 +1,7 @@
 $font-stack-title: 'Abril Fatface', cursive;
-$font-color-title: #FCBF49; 
+$font-color-title: #C60F7B; 
 $font-color-background: #003049;
-$font-color-default: #EAE2B7;
+$font-color-default: #C60F7B;
 
 * {
     text-align: center;
@@ -13,8 +13,7 @@ $font-color-default: #EAE2B7;
 }
 
 body {
-    background-image: url(./images/bkg-img2.jpg);
-    background-size: 1000px;
+    background-color: #f2f5ff;
     // background-color: $font-color-background;
 }
 
@@ -31,9 +30,10 @@ img {
     width: auto;
     margin: 10px;
     padding: 0px;
-    border: 25px solid transparent;
-    border-image: url(./images/frame3.png) 8% 6% stretch;
-    box-shadow: 7px 7px 5px black;
+    border: 15px solid #F90093;
+    border-radius: 10px;
+    box-shadow: 5px;
+    box-shadow: 0px 0px 14px 1px #000000;
     // border-image-slice: 50%; 
 }
 
@@ -82,7 +82,7 @@ img:hover{
 }
 
 .queen-name {
-    color: #FCBF49;
+    color: #C60F7B;
     font-size: 1.5em;
     font-family: $font-stack-title;
 }
@@ -109,10 +109,9 @@ img:hover{
 
 button{
     font-size: 30px;
-    background-color:#EAE2B7;
-    color: #003049;
-    border: 10px solid transparent;
-    border-image: url(./images/frame3.png) 7% stretch;
+    color: #C60F7B;
+    border: 7px solid #C60F7B;
+    border-radius: 5px;
     margin: 10px;
     padding: 10px;
     font-family: $font-stack-title;
@@ -139,9 +138,9 @@ button:active{
 
 .loader {
     // display: block;
-    border: 16px solid #EAE2B7;
+    border: 16px solid #D6D1CD;
     border-radius: 50%;
-    border-top: 16px solid #FCBF49;
+    border-top: 16px solid #C60F7B;
     width: 60px;
     height: 60px;
     -webkit-animation: spin 2s linear infinite; /* Safari */
@@ -169,28 +168,13 @@ button:active{
     background-image: radial-gradient(white, grey);
 }
 
-.green-neon-light{
-    // background-color: yellow;
-    z-index: 100;
-    width: 300px;
-    height: 20px;
-    margin: 20px auto 0px auto;
-    border-radius: 10px;
-    color: #111; 
-    background: #39ff14; 
-    background-image: radial-gradient(white, #00FF00);
+.green-border{
+    // background-color: yellow
+    // border: 25px solid #39ff14; 
     box-shadow: 0px 0px 25px 14px #00FF00;
 }
 
-.red-neon-light{
-    // background-color: yellow;
-    z-index: 100;
-    width: 300px;
-    height: 20px;
-    margin: 20px auto 0px auto;
-    border-radius: 10px;
-    color: #111; 
-    background: red; 
-    background-image: radial-gradient(white, red);
+.red-border{
+    // border: 25px solid red; 
     box-shadow: 0px 0px 25px 14px red;
 }

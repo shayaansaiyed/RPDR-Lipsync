@@ -139,11 +139,11 @@ async function handleChoice(choice){
         score++;
         // alert("Correct choice");
         // animation for correct/incorrect choice
-        console.log(document.querySelector("#neon-light"));
-        document.querySelector("#neon-light").className = "green-neon-light";
+        choiceImg.classList.add("green-border");
     } else {
         choiceImg.classList.add("shake");
-        document.querySelector("#neon-light").className = "red-neon-light";
+        choiceImg.classList.add("red-border");
+        // document.querySelector("#neon-light").className = "red-neon-light";
     }
 
     await new Promise(r => setTimeout(r, 1000));
@@ -175,7 +175,6 @@ function displayRound(){
         `;
         }
     }).join('');
-    document.querySelector("#neon-light").className = "off-neon-light";
     document.querySelector("#choices").innerHTML = buttonHTML;
     document.querySelector(".episodeTitle").innerHTML = gameData[currentRound].episodeName;
     document.querySelector("#seasonNumber").innerHTML = gameData[currentRound].seasonNumber;
